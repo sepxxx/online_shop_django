@@ -1,0 +1,60 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class="accordion accordion-borderless" id="accordionPanelsStayOpenExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingOne">
+      <button class="accordion-button" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+        ДОСТАВКА
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+      <div class="accordion-body">
+      <p>
+        Отправка обычно осуществляется каждую пятницу.(Вещи которые в наличии).Трек присылают вам на почту <br>
+        компания CDEK в течении дня с заказа товара.Даты отправки посылки пишутся в карточке товара.Если товар<br>
+        был РЕСТОКНУТ или открыт ПРЕДЗАКАЗ значит он будет готов в течении 1-4 недель и сразу отправлен вам.<br>
+        ВСЕ посылки отправляем CDEK отслеживать тут https://www.cdek.ru/ru
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+        aria-controls="panelsStayOpen-collapseTwo">
+        ВОЗВРАТ
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+      <div class="accordion-body">
+      <p>
+        Вы можете вернуть вещь в случае брака, если прислали другую вещь, в этом случае производится доставка за <br>
+        счёт магазина или же возврат средств, обычно этот процесс занимает (1-15 раб дней
+      </p>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button class="accordion-button collapsed" type="button" data-mdb-toggle="collapse"
+        data-mdb-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+        aria-controls="panelsStayOpen-collapseThree">
+        КОНТАКТЫ
+      </button>
+    </h2>
+    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+      <div class="accordion-body">
+      <p>
+        https://vk.com/automaticvertical
+      </p>
+        <p>
+          https://t.me/Automaticverticalclo
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,8 +1,8 @@
 
 import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect,get_object_or_404
 from .models import *
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 import json
 from . utils import *
 # from django.contrib.auth.forms import UserCreationForm
@@ -12,8 +12,18 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-def prod(request):
-    return render(request, 'store/prod.html')
+def faq(request):
+    uauth = request.user.is_authenticated
+    return render(request, 'store/faq.html', {'uauth': uauth})
+def aboutbrand(request):
+    uauth = request.user.is_authenticated
+    return render(request, 'store/aboutbrand.html', {'uauth': uauth})
+def detail(request, prod_id):
+    # return HttpResponse("You're looking at question %s." % prod_id)
+    product = get_object_or_404(Product, pk=prod_id)
+    uauth = request.user.is_authenticated
+    context = {'product': product, 'uauth': uauth}
+    return render(request, 'store/prod.html', context=context)
 @login_required(login_url='login')
 def userOrders(request):
     # проверяем есть ли у юзера complete заказы
@@ -27,7 +37,7 @@ def userOrders(request):
 
     uauth = request.user.is_authenticated
 
-    context = { 'orders': orders, 'uauth': uauth}
+    context = {'orders': orders, 'uauth': uauth}
 
     return render(request, 'store/orders.html', context)
 

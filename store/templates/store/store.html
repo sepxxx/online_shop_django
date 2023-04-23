@@ -4,8 +4,8 @@
     <div class="row">
         {% for product in products %}
         <div class="col-lg-3">
-            <a href="{% url 'prod' product.id %}">
-                <img class="img-fluid " src="{{product.imageURL}}" alt="">
+            <a class='' href="{% url 'detail' product.id %}" >
+                <img class="img-fluid" src="{{product.imageURL}}" alt="" data-mdb-toggle="animation" data-mdb-animation-reset="true" data-mdb-animation="fade-in-up">
                 <div class="text-center mfont">
                     <div class="mb-1">{{product.name}}</strong></div>
                     <div>${{product.price|floatformat:2}}</div>
@@ -15,4 +15,5 @@
         {% endfor %}
 
     </div>
+<hr>
 {% endblock content %}
