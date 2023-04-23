@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href='{% static "/css/reg_log.css" %}'>
+    <title>REG</title>
+</head>
+<body>
+
+<div class="wrapper">
+    <h2>Log in</h2>
+    <form action="" method="POST">
+        {% csrf_token %}
+      <div class="input-box">
+        <input type="text" name="username" placeholder="Enter your username" required>
+      </div>
+      <div class="input-box">
+       <input type="password" name="password" placeholder="Enter your pass" required>
+      </div>
+      <div class="input-box btn-light">
+        <input type="Submit" value="Log in">
+      </div>
+        {% for message in messages %}
+        <p id="messages">{{message}}</p>
+        {% endfor %}
+      <div class="text">
+        <h3>Don't have an account? <a href="{% url 'register' %}">Sign up</a></h3>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>

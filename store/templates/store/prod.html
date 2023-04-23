@@ -1,0 +1,18 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row align-items-center">
+    <div class="col-md-6">
+        <img style="max-width:560px;" src="{% static 'images/h_vallejo.jpg' %}" alt="">
+    </div>
+    <div class="col-md-6">
+            <h3 class="">BORIS VALLEJO ZIP HOODIE v2</h3>
+            <h5>3 690 ₽</h5>
+            <div class="btn update-cart" data-product="1" data-action="add">В корзину</div>
+            <p>Футер 3х нитка петля 100% хлопок - 390 гр/м2 dtf печать Оверсайз крой</p>
+    </div>
+</div>
+
+<!--<button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>-->
+{% endblock content %}

@@ -1,0 +1,37 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+    {% for key, values in orders.items %}
+
+    <div class="card w-75 my-2">
+      <div class="card-body row">
+        <h5 class="card-title">Заказ: {{key}}</h5>
+          <div class="col-8">
+              <p class="card-text">
+                <h5>Состав:</h5>
+                <ul>
+                {% for v in values %}
+                    <li>{{v.product}} x{{v.quantity}}</li>
+                {% endfor %}
+                  </ul>
+                    <h5>Всего вещей:   {{key.get_cart_items}}</h5>
+                    <h5>Стоимость:   ${{key.get_cart_total}}</h5>
+            </p>
+          </div>
+
+          <div class="col-4">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-mdb-ride="carousel">
+                  <div class="carousel-inner">
+                      {% for v in values %}
+                      <div class="carousel-item active">
+                            <img src="{{v.product.imageURL}}" class="d-block w-100" alt="Wild Landscape"/>
+                      </div>
+    <!--                    <img style="width:30px; height:30px;" src="{{v.product.imageURL}}">-->
+                  {% endfor %}
+                </div>
+              </div>
+          </div>
+      </div>
+    </div>
+ {% endfor %}
+{% endblock content %}

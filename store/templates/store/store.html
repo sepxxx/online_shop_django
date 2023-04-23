@@ -3,15 +3,14 @@
 {% block content %}
     <div class="row">
         {% for product in products %}
-        <div class="col-lg-4">
-            <div class="box-element product">
-                <img class="thumbnail" src="{{product.imageURL}}" alt="">
-                <h6><strong>{{product.name}}</strong></h6>
-                <hr>
-                <button data-product={{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart">Add to Cart</button>
-                <a href="#" class="btn btn-outline-success">View</a>
-                <h4 style="display: inline-block; float: right;">${{product.price|floatformat:2}}</h4>
-            </div>
+        <div class="col-lg-3">
+            <a href="{% url 'prod' product.id %}">
+                <img class="img-fluid " src="{{product.imageURL}}" alt="">
+                <div class="text-center mfont">
+                    <div class="mb-1">{{product.name}}</strong></div>
+                    <div>${{product.price|floatformat:2}}</div>
+                </div>
+            </a>
         </div>
         {% endfor %}
 

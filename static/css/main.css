@@ -29,11 +29,7 @@ h1,h2,h3,h4,h5,h6{
 	background-color: #4f868c;
 }
 
-#cart-icon{
-	width:25px;
-	display: inline-block;
-	margin-left: 15px;
-}
+
 
 #cart-total{
 	display: block;
@@ -101,3 +97,63 @@ h1,h2,h3,h4,h5,h6{
 .navbar {
     margin-bottom: 10px;
 }
+
+.nav__logo {
+  color: #000000;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1.23;
+  font-family: 'Montserrat',Arial,sans-serif;
+  margin: 12px 27px;
+}
+
+.mfont {
+    color: #525252;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Montserrat';
+    line-height: 1.35;
+}
+
+#cart-icon{
+	width:19px;
+	height:19px;
+	margin-bottom: 3px;
+    margin-right: 22px;
+
+}
+
+.footer__sign {
+    color: #000000;
+    font-size: 10px;
+    font-weight: 400;
+    font-family: 'helvetica';
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
