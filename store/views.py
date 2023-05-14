@@ -19,25 +19,22 @@ def aboutbrand(request):
     uauth = request.user.is_authenticated
     return render(request, 'store/aboutbrand.html', {'uauth': uauth})
 def detail(request, prod_id):
-    # return HttpResponse("You're looking at question %s." % prod_id)
     product = get_object_or_404(Product, pk=prod_id)
     uauth = request.user.is_authenticated
     context = {'product': product, 'uauth': uauth}
     return render(request, 'store/prod.html', context=context)
 @login_required(login_url='login')
 def userOrders(request):
-    # проверяем есть ли у юзера complete заказы
-    orders_ids = Order.objects.filter(customer=request.user.customer, complete=True)
-        # .values_list("id", flat=True)
-
-    orders = {}
-    for order_id in orders_ids:
-        orders[order_id] = OrderItem.objects.filter(order=order_id)
-    # print(orders)
-
     uauth = request.user.is_authenticated
-
-    context = {'orders': orders, 'uauth': uauth}
+    try:
+        # проверяем есть ли у юзера complete заказы
+        orders_ids = Order.objects.filter(customer=request.user.customer, complete=True)
+        orders = {}
+        for order_id in orders_ids:
+            orders[order_id] = OrderItem.objects.filter(order=order_id)
+        context = {'orders': orders, 'uauth': uauth}
+    except:
+        context = {'uauth': uauth}
 
     return render(request, 'store/orders.html', context)
 
@@ -142,7 +139,6 @@ def processOrder(request):
 
     total = float(data['form']['total'])
     order.transaction_id = transaction_id
-    # часть логики paypal оплаты будет на фронте
     # чтобы юзеры не могли подменить тотал здесь нужна проверка
     if total == float(order.get_cart_total):
         order.complete = True
