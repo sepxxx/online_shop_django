@@ -7,16 +7,16 @@
         <img style="max-width:560px;" src="{{ product.imageURL }}" alt="">
     </div>
     <div class="col-md-6">
-        <div class="d-flex align-items-start flex-column">
-            <div class="mb-auto" style="">
+
+            <div class="" style="margin-top: 15%">
                 <h3>{{ product.name }}</h3>
+                <p class="">Футер 3х-нитка<br>100% хлопок<br>390гр плотность<br>dtf печать<br>Оверсайз крой</p>
+                <div style="margin-top: 15%">
+                    <h5>{{ product.price }}₽</h5>
+                    <div class="btn update-cart" data-product="{{ product.id }}" data-action="add">В корзину</div>
+                </div>
             </div>
-            <div>
-                <h5>{{ product.price }}₽</h5>
-                <div class="btn update-cart" data-product="{{ product.id }}" data-action="add">В корзину</div>
-                <p>Футер 3х нитка петля 100% хлопок - 390 гр/м2 dtf печать Оверсайз крой</p>
-            </div>
-        </div>
+
 
     </div>
 </div>
